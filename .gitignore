@@ -78,3 +78,14 @@ dapp/localhost.key
 
 # built package.json
 dapp/src/package.json
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+
