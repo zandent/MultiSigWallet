@@ -8,7 +8,7 @@ const config: HardhatUserConfig = {
     hardhat: {
       blockGasLimit: 60000000,
     },
-    espace: {
+    espacetesting: {
       url: "https://evm.confluxrpc.com",
       gasPrice: 10000000000,
       accounts: [process.env.PRIVATE_KEY as string, process.env.PRIVATE_KEY2 as string, process.env.PRIVATE_KEY3 as string],
@@ -17,6 +17,11 @@ const config: HardhatUserConfig = {
       url: "https://evmtestnet.confluxrpc.com",
       gasPrice: 10000000000,
       accounts: [process.env.PRIVATE_KEY as string, process.env.PRIVATE_KEY2 as string, process.env.PRIVATE_KEY3 as string],
+    },
+    espace: {
+      url: "https://evm.confluxrpc.com",
+      gasPrice: 10000000000,
+      accounts: [process.env.PRIVATE_KEY as string],
     },
   },
 };
