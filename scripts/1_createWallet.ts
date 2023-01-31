@@ -19,9 +19,10 @@ const ADDRESSES: {
     OwnerRequired: 2,
   },
   espace: {
-    MultiSigWalletFactory: "",
-    Owner: [""],
-    OwnerRequired: 2,
+    MultiSigWalletFactory: "0x56d2546e9d7D2B522b531eC6E0A34E22B9CeAfa8",
+    Owner: ["0xEc9Ab75751E9EEd2C50dFE158AEeA02bdf8DE5fB","0xee9988bDF3E98549b4C03cB0D0cfF1F63C72d0c5", "0x18b9d5dBB1Cf5c59ecb0eE0c6AD2b5216C786255",
+    ""],
+    OwnerRequired: 3,
   },
 };
 let MultiSigWalletFactory: MultiSigWalletFactory;
@@ -39,7 +40,7 @@ async function main() {
     console.log("✅ Deployed MultiSigWalletFactory at:", MultiSigWalletFactory.address);
     addresses.MultiSigWalletFactory = MultiSigWalletFactory.address;
   }
-  var tx = await MultiSigWalletFactory.create(addresses.Owner, 2);
+  var tx = await MultiSigWalletFactory.create(addresses.Owner, addresses.OwnerRequired);
   await tx.wait();
   console.log("✅ Create a new Wallet (check the log events in Scan to get created wallet address):", tx.hash);
 }

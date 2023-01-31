@@ -26,7 +26,7 @@ const ADDRESSES: {
     NUT: "",
     MultiSigWallet: "",
     Owner: [""],
-    OwnerRequired: 2,
+    OwnerRequired: 3,
     transactionId: -1,
   },
 };

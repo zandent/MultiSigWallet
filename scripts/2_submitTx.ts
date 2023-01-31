@@ -24,7 +24,7 @@ const ADDRESSES: {
     NUT: "",
     MultiSigWallet: "",
     Owner: [""],
-    OwnerRequired: 2,
+    OwnerRequired: 3,
   },
 };
 let MultiSigWallet: MultiSigWallet;
@@ -40,7 +40,7 @@ async function main() {
     var balance = await NUTTokenInterface.balanceOf(addresses.MultiSigWallet);
     console.log("Wallet NUT balance: ", balance.toString());
     let iface = new ethers.utils.Interface(ierc20.abi);
-    let data = iface.encodeFunctionData("transfer", ["0x05b221bF662664fBB520e72D895AACAcb40ae039", ethers.utils.parseEther("100")]);
+    let data = iface.encodeFunctionData("transfer", ["0x97b4457F6914596B5c8de908fe366962Bb6f900E", ethers.utils.parseEther("3000")]);
     var tx = await MultiSigWallet.submitTransaction(addresses.NUT, 0, data);
     await tx.wait();
     console.log("✅ submitTransaction:", tx.hash);
