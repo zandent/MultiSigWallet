@@ -24,7 +24,7 @@ const ADDRESSES: {
   },
   espace: {
     NUT: "",
-    MultiSigWallet: "",
+    MultiSigWallet: "0xbeb910ae81e3dd1622633660d47443ae37894f75",
     Owner: [""],
     OwnerRequired: 3,
     transactionId: -1,
