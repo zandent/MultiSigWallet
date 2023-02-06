@@ -19,10 +19,20 @@ Then run:
 npx hardhat --network espace scripts/1_submitTx.ts
 ```
 Record the transaction hash from the terminal output after the script runs
+
 ## Confirm the transaction (which should be done ONLY by other MultiSig owners.)
 Go to ConfluxScan and check the log event "event Confirmation(address indexed sender, uint indexed transactionId)" according to the recorded transaction hash.
-Then Change MultiSigWallet value line 24 under scripts/2_confirmTx.ts to the MultiSig Wallet address. Then change value "-1" in the line 30 under scripts/2_confirmTx.ts to the transaction id from the log event. Then run:
+Then Change MultiSigWallet value line 20 under scripts/2_confirmTx.ts to the MultiSig Wallet address. Then change value "-1" in the line 21 under scripts/2_confirmTx.ts to the transaction id from the log event. Then run:
 ```bash
 npx hardhat --network espace scripts/2_confirmTx.ts
+```
+## (Optional) Check submitted transaction details (before confirming transaction)
+Change MultiSigWallet value line 20 under scripts/4_TxDataCheck.ts to the MultiSig Wallet address. Then change value "-1" in the line 21 under scripts/4_TxDataCheck.ts to the transaction id from the log event.. Then run:
+```bash
+npx hardhat --network espace scripts/4_TxDataCheck.ts
+```
+To compare, you can report the repo owner or draft by yourself in the script "scripts/1_submitTx.ts" to show proposed transaction details. Comment line 44 to 46 in "scripts/1_submitTx.ts" after implementing. Then run:
+```bash
+npx hardhat --network espace scripts/1_submitTx.ts
 ```
 ## Once the number of confirmations reached the required threshold, the transaction will be executed automatically. Done.

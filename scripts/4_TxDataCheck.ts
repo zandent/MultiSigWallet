@@ -8,17 +8,17 @@ import * as fs from 'fs';
 import { string } from "hardhat/internal/core/params/argumentTypes";
 const ADDRESSES: {
   [network: string]: {
-    NUT: string;
     MultiSigWallet: string;
+    transactionId: number;
   };
 } = {
   testnet: {
-    NUT: "0x1e9890180DC264670BC086ac2084bB3B700fb051",
     MultiSigWallet: "0xe0493ddccfbc2c656ccafe8518dc631a76888ef8",
+    transactionId: 0,
   },
   espace: {
-    NUT: "0xfe197e7968807b311d476915db585831b43a7e3b",
     MultiSigWallet: "0xbeb910ae81e3dd1622633660d47443ae37894f75",
+    transactionId: -1,
   },
 };
 let MultiSigWallet: MultiSigWallet;
@@ -29,21 +29,12 @@ async function main() {
   if (addresses.MultiSigWallet !== "") {
     MultiSigWallet = await ethers.getContractAt("MultiSigWallet", addresses.MultiSigWallet, deployer);
     console.log("👉 Found MultiSigWallet contract at:", MultiSigWallet.address);
-    //Here is the example: the transaction to transfer 100 NUT token to destination address
-    let NUTTokenInterface = new ethers.Contract(addresses.NUT, ierc20.abi, deployer);
-    var balance = await NUTTokenInterface.balanceOf(addresses.MultiSigWallet);
-    console.log("Wallet NUT balance: ", balance.toString());
-    let iface = new ethers.utils.Interface(ierc20.abi);
-    let data = iface.encodeFunctionData("transfer", ["0x97b4457F6914596B5c8de908fe366962Bb6f900E", ethers.utils.parseEther("100")]);
-    let value = ethers.utils.parseEther("0");
+    var TxInfo = await MultiSigWallet.transactions(addresses.transactionId);
     console.log("👉 Transaction Info:");
-    console.log("    destination:", addresses.NUT);
-    console.log("    value:", value);
-    console.log("    data:", data);
-    console.log("    already executed:", false);
-    var tx = await MultiSigWallet.submitTransaction(addresses.NUT, value, data);
-    await tx.wait();
-    console.log("✅ submitTransaction:", tx.hash);
+    console.log("    destination:", TxInfo.destination);
+    console.log("    value:", TxInfo.value.toString());
+    console.log("    data:", TxInfo.data);
+    console.log("    already executed:", TxInfo.executed);
   }else{
     return;
   }
