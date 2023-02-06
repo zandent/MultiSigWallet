@@ -10,23 +10,17 @@ const ADDRESSES: {
   [network: string]: {
     NUT: string;
     MultiSigWallet: string;
-    Owner: string[];
-    OwnerRequired: number;
     transactionId: number;
   };
 } = {
   testnet: {
     NUT: "0x1e9890180DC264670BC086ac2084bB3B700fb051",
     MultiSigWallet: "0xe0493ddccfbc2c656ccafe8518dc631a76888ef8",
-    Owner: [""],
-    OwnerRequired: 2,
     transactionId: 0,
   },
   espace: {
     NUT: "",
     MultiSigWallet: "0xbeb910ae81e3dd1622633660d47443ae37894f75",
-    Owner: [""],
-    OwnerRequired: 3,
     transactionId: -1,
   },
 };
