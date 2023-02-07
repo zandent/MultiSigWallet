@@ -11,12 +11,12 @@ const config: HardhatUserConfig = {
     espacetesting: {
       url: "https://evm.confluxrpc.com",
       gasPrice: 10000000000,
-      accounts: [process.env.PRIVATE_KEY as string, process.env.PRIVATE_KEY2 as string, process.env.PRIVATE_KEY3 as string],
+      accounts: [process.env.PRIVATE_KEY as string],
     },
     testnet: {
       url: "https://evmtestnet.confluxrpc.com",
       gasPrice: 10000000000,
-      accounts: [process.env.PRIVATE_KEY as string, process.env.PRIVATE_KEY2 as string, process.env.PRIVATE_KEY3 as string],
+      accounts: [process.env.PRIVATE_KEY as string],
     },
     espace: {
       url: "https://evm.confluxrpc.com",

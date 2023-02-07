@@ -18,7 +18,7 @@ const ADDRESSES: {
   },
   espace: {
     NUT: "0xfe197e7968807b311d476915db585831b43a7e3b",
-    MultiSigWallet: "0xbeb910ae81e3dd1622633660d47443ae37894f75",
+    MultiSigWallet: "0xea41549df7196805cd9bb30e790e86389f4c13af",
   },
 };
 let MultiSigWallet: MultiSigWallet;
@@ -34,7 +34,7 @@ async function main() {
     var balance = await NUTTokenInterface.balanceOf(addresses.MultiSigWallet);
     console.log("Wallet NUT balance: ", balance.toString());
     let iface = new ethers.utils.Interface(ierc20.abi);
-    let data = iface.encodeFunctionData("transfer", ["0x97b4457F6914596B5c8de908fe366962Bb6f900E", ethers.utils.parseEther("100")]);
+    let data = iface.encodeFunctionData("transfer", ["0x14bd1d7bA3B376e8d9Ea1167a7a4cf3C95C924db", ethers.utils.parseEther("10000")]);
     let value = ethers.utils.parseEther("0");
     console.log("👉 Transaction Info:");
     console.log("    destination:", addresses.NUT);

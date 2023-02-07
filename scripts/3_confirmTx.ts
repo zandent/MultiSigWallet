@@ -18,7 +18,7 @@ const ADDRESSES: {
   },
   espace: {
     MultiSigWallet: "0xbeb910ae81e3dd1622633660d47443ae37894f75",
-    transactionId: -1,
+    transactionId: 0,
   },
 };
 let MultiSigWallet: MultiSigWallet;
