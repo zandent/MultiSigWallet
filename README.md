@@ -24,7 +24,7 @@ Record the transaction hash from the terminal output after the script runs
 Go to ConfluxScan and check the log event "event Confirmation(address indexed sender, uint indexed transactionId)" according to the recorded transaction hash.
 Then Change MultiSigWallet value line 20 under scripts/2_confirmTx.ts to the MultiSig Wallet address. Then change value "-1" in the line 21 under scripts/2_confirmTx.ts to the transaction id from the log event. Then run:
 ```bash
-npx hardhat --network espace run scripts/2_confirmTx.ts
+npx hardhat --network espace run scripts/3_confirmTx.ts
 ```
 ## (Optional) Check submitted transaction details (before confirming transaction)
 Change MultiSigWallet value line 20 under scripts/4_TxDataCheck.ts to the MultiSig Wallet address. Then change value "-1" in the line 21 under scripts/4_TxDataCheck.ts to the transaction id from the log event.. Then run:
