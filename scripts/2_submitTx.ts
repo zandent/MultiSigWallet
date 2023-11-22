@@ -14,7 +14,7 @@ const ADDRESSES: {
 } = {
   testnet: {
     NUT: "0x1e9890180DC264670BC086ac2084bB3B700fb051",
-    MultiSigWallet: "0xe0493ddccfbc2c656ccafe8518dc631a76888ef8",
+    MultiSigWallet: "0x5F3fb5533286528f2F122eBeAfc2c0C63d39c04D",
   },
   espace: {
     NUT: "0xfe197e7968807b311d476915db585831b43a7e3b",
