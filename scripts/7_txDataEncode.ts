@@ -10,7 +10,7 @@ let FiatTokenV2_1 = require(`./FiatTokenV2_1.sol/FiatTokenV2_1.json`);
 async function main() {
   const [deployer] = await ethers.getSigners();
   let iface = new ethers.utils.Interface(FiatTokenV2_1.abi);
-  let data = iface.encodeFunctionData("configureMinter", [deployer.address, ("1000000000"]);
+  let data = iface.encodeFunctionData("configureMinter", [deployer.address, "1000000000"]);
   let value = ethers.utils.parseEther("0");
   console.log("👉 Transaction Info:");
   console.log(`    destination: ${process.env.FiatToken}`);
