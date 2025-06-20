@@ -79,7 +79,7 @@ dapp/localhost.key
 # built package.json
 dapp/src/package.json
 node_modules
-.env
+.env*
 coverage
 coverage.json
 typechain

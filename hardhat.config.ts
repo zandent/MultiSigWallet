@@ -20,8 +20,15 @@ const config: HardhatUserConfig = {
     },
     espace: {
       url: `https://evm.confluxrpc.com/${process.env.RPC_KEY}`,
-      gasPrice: 20000000000,
-      accounts: [process.env.PRIVATE_KEY as string],
+      accounts: [process.env.PRIVATE_KEY as string, process.env.PRIVATE_KEY2 as string],
+    },
+    sepolia: {
+      url: `https://ethereum-sepolia-rpc.publicnode.com`,
+      accounts: [process.env.PRIVATE_KEY as string, process.env.PRIVATE_KEY2 as string, process.env.PRIVATE_KEY3 as string],
+    },
+    eth: {
+      url: `https://ethereum-rpc.publicnode.com`,
+      accounts: [process.env.PRIVATE_KEY as string, process.env.PRIVATE_KEY2 as string, process.env.PRIVATE_KEY3 as string],
     },
   },
 };
