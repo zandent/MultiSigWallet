@@ -30,6 +30,10 @@ const config: HardhatUserConfig = {
       url: `https://ethereum-rpc.publicnode.com`,
       accounts: [process.env.PRIVATE_KEY as string, process.env.PRIVATE_KEY2 as string, process.env.PRIVATE_KEY3 as string],
     },
+    hederatest:{
+      url: `https://testnet.hashio.io/api`,
+      accounts: [process.env.PRIVATE_KEY as string, process.env.PRIVATE_KEY2 as string, process.env.PRIVATE_KEY3 as string],
+    }
   },
 };
 
